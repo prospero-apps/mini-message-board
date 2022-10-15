@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  div.container.form-container
+    h1#form-title= title
+
+    form(
+      method='POST'
+      action='/new'
+    )
+      label(for='messageTitle') Title
+        input#messageTitle(type='text' name='messageTitle')
+
+      label(for='messageUser') Author's Name
+        input#messageUser(type='text' name='messageUser')
+
+      label(for='message') Message Text
+        textarea#message(name='messageText' rows=5)
+
+      button Add Message
+
+      a(href='/') Cancel
